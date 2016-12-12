@@ -157,7 +157,7 @@ public:
 
 	//同じグループのメンバーを返す
 	vector<T>friendList( T a ) {
-		long long int inputID = groupID( M[a] );
+		long long int inputID = find( M[a] );
 		vector<T>ret;
 		for( auto now : M ) {
 			if( find( now.second ) == inputID ) {
