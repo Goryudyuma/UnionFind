@@ -150,6 +150,11 @@ public:
 		return C[find( M[a] )];
 	}
 
+	//¡‘®‚µ‚Ä‚¢‚éƒOƒ‹[ƒv‚ÌID‚ğ•Ô‚·
+	long long int groupID( T a ) {
+		return find( M[a] );
+	}
+
 private:
 	vector<long long int>C, V, rank;
 	map < T, long long int>M;
