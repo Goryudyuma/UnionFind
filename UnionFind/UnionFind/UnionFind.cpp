@@ -155,6 +155,18 @@ public:
 		return find( M[a] );
 	}
 
+	//同じグループのメンバーを返す
+	vector<T>friendList( T a ) {
+		long long int inputID = groupID( M[a] );
+		vector<T>ret;
+		for( auto now : M ) {
+			if( find( now.second ) == inputID ) {
+				ret.emplace_back( now.first );
+			}
+		}
+		return ret;
+	}
+
 private:
 	vector<long long int>C, V, rank;
 	map < T, long long int>M;
@@ -177,6 +189,5 @@ int main() {
 	assert( uf.group() == 9 );
 	assert( uf.count( 0 ) == 2 );
 	assert( uf.count( 9 ) == 1 );
-	
 
 }
